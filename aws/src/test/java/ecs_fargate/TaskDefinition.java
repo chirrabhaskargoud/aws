@@ -7,8 +7,8 @@ import com.amazonaws.services.ecs.model.*;
 public class TaskDefinition {
 
 	public static String createTaskDefinition() throws InterruptedException {
-		String taskDefinitionName = "seleniumtaskdefinition";
-		String containerName = "seleniumcontainer";
+		String taskDefinitionName = "xxxxxxx";
+		String containerName = "xxxxxxx";
 		String image = "public.ecr.aws/g4l8l7t0/seleniumchrome";
 
 		AmazonECS ecsClient = AmazonECSClientBuilder.defaultClient();
@@ -19,7 +19,7 @@ public class TaskDefinition {
 		RegisterTaskDefinitionRequest taskDefinitionRequest = new RegisterTaskDefinitionRequest()
 				.withFamily(taskDefinitionName).withNetworkMode(NetworkMode.Awsvpc)
 				.withRequiresCompatibilities(Compatibility.FARGATE)
-				.withExecutionRoleArn("arn:aws:iam::484722528853:role/ecsTaskExecutionRole")
+				.withExecutionRoleArn("arn:aws:iam::xxxxxxx:role/xxxxxxx")
 				.withCpu(String.valueOf("1024")).withMemory(String.valueOf("3072"))
 				.withContainerDefinitions(containerDefinition);
 
