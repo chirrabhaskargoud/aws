@@ -22,7 +22,7 @@ import com.amazonaws.services.ecs.model.RunTaskResult;
 import com.amazonaws.services.ecs.model.Task;
 
 public class CreateEcsClusterAndRunTask {
-	static String clusterName = "seleniumcluster";
+	static String clusterName = "xxxxxxx";
 	public static String createEcsClusterAndRunTask(String taskDefinitionArn) throws InterruptedException {
 		int desiredCount = 1; // Number of tasks to run
 
@@ -35,11 +35,11 @@ public class CreateEcsClusterAndRunTask {
 		ecsClient.createCluster(createClusterRequest);
 
 		Thread.sleep(20000);
-		String securityGroupString = "sg-07da82d1dbb315f18";
+		String securityGroupString = "sg-xxxxxxxxx";
 		List<String> subNetlist = new ArrayList<String>();
-		subNetlist.add("subnet-0f70d333d97fd5094");
-		subNetlist.add("subnet-027e198244f2b6df7");
-		subNetlist.add("subnet-055ba65e886efbf0b");
+		subNetlist.add("subnet-xxxxxxx");
+		subNetlist.add("subnet-xxxxxxx");
+		subNetlist.add("subnet-xxxxxxx");
 
 		AwsVpcConfiguration awsvpcConfiguration = new AwsVpcConfiguration().withSecurityGroups(securityGroupString)
 				.withSubnets(subNetlist).withAssignPublicIp(AssignPublicIp.ENABLED);
